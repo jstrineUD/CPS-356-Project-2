@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 4.2)
-project(code C)
+cmake_minimum_required(VERSION 3.16)
+project(ChefWaiterSystem C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(code main.c
-        ProblemOne.c
-        ProblemOne.h
-        ProblemTwo.c
-        ProblemTwo.h)
+find_package(Threads REQUIRED)
+
+add_executable(ChefWaiterSystem main.c)
+
+target_link_libraries(ChefWaiterSystem PRIVATE Threads::Threads)
